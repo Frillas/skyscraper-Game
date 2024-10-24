@@ -21,7 +21,7 @@ void	add_number_2_1(char skyscraper[6][6])
 		j++;
 	}
 }
-
+/*-----------------------------------------------------------------------*/
 void	checkarg_2_2_verti(char skyscraper[6][6], int i)
 {
 	int	test1;
@@ -46,7 +46,7 @@ void	checkarg_2_2_verti(char skyscraper[6][6], int i)
 		i++;
 	}
 }
-
+/*-----------------------------------------------------------------------*/
 void	checkarg_2_2_hori(char skyscraper[6][6], int i)
 {
 	int	test1;
@@ -71,7 +71,7 @@ void	checkarg_2_2_hori(char skyscraper[6][6], int i)
 		i++;
 	}
 }
-
+/*-----------------------------------------------------------------------*/
 void    checkarg_2_3_hori(char skyscraper[6][6], int i, int test1, int test2)
 {
         int     test3;
@@ -96,7 +96,7 @@ void    checkarg_2_3_hori(char skyscraper[6][6], int i, int test1, int test2)
                 i++;
         }
 }
-
+/*-----------------------------------------------------------------------*/
 void    checkarg_2_3_verti(char skyscraper[6][6], int i, int test1, int test2)
 {
         int     test3;

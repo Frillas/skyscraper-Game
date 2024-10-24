@@ -14,10 +14,11 @@ int	check_arg(char skyscraper[6][6], char **argv);
 void	ft_putchar(char skyscraper[6][6]);
 void	error();
 
-//skyscraper_fill
+//add_4.c
 void    check_3and2(char skyscraper[6][6]);
 void    last_4(char skyscraper[6][6], int i, int j);
 void    check_2and1(char skyscraper[6][6]);
+void    corner_check(char skyscraper[6][6], int i, int k);
 
 //add_3.c
 void    add_number_3(char skyscraper[6][6]);
@@ -56,13 +57,22 @@ int     check_for_zero(char skyscraper[6][6]);
 void    last_number_verti(char skyscraper[6][6]);
 int     find_zero_verti(char skyscraper[6][6], int j);
 int     numbers_count_verti(char skyscraper[6][6], int j);
+int     cross_zero(char skyscraper[6][6]);
+void    cross_include(char skyscraper[6][6]);
+
+//check_place.c
+int     check_place(char skyscraper[6][6]);
+int     check_place_LtoR(char skyscraper[6][6], int i, int k);
+int     check_place_RtoL(char skyscraper[6][6], int i, int k);
+int     check_place_UtoL(char skyscraper[6][6], int j, int k);
+int     check_place_LtoU(char skyscraper[6][6], int j, int k);
 
 //skyscraper_init
 void	init_sky(char skyscraper[6][6]);
 void	add_4_hori(char skyscraper[6][6]);
 void	add_4_verti(char skyscraper[6][6]);
-void	add_1_hori(char skyscraper[6][6]);
-void	add_1_verti(char skyscraper[6][6]);
+void	add_1(char skyscraper[6][6]);
+void    corner_check_1(char skyscraper[6][6]);
 
 //check.c
 int	checklines(char skyscraper[6][6]);

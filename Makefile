@@ -4,6 +4,7 @@ SRC = sources/main.c sources/check.c sources/add_4.c \
       sources/init.c sources/tools.c sources/add_3.c \
       sources/add_3_next.c sources/add_2_1.c sources/add_2_1_next.c \
       sources/last_number.c sources/last_number_next.c \
+      sources/check_place.c \
 
 RM = rm -rf
 

@@ -43,7 +43,7 @@ void	last_4(char skyscraper[6][6], int i, int j)
 	}
 	i = 10 - count_i;
 	j = 10 - count_j;
-	if((i > 0) && (j > 0))
+	if((i > 1 && i < 4) && (j > 1 && j < 4))
 		skyscraper[i][j] = '4';
 }
 /*-----------------------------------------------------------------------*/
@@ -51,8 +51,9 @@ void	check_2and1(char skyscraper[6][6])
 {
 	int	i;
 	
-	i = 1;
-	while (i < 5)
+	i = 2;
+	corner_check(skyscraper, 1, 0);
+	while (i < 4)
 	{
 		if(skyscraper[0][i] == '1' && skyscraper[5][i] == '2')
 			skyscraper[4][i] = '3';
@@ -64,5 +65,29 @@ void	check_2and1(char skyscraper[6][6])
 			skyscraper[i][1] = '3';
 		i++;
 	}
-	
+	corner_check(skyscraper, 4, 5);
+}
+/*-----------------------------------------------------------------------*/
+void	corner_check(char skyscraper[6][6], int i, int k)
+{
+	if (skyscraper[0][i] == '1' && skyscraper[5][i] == '2')
+	{
+		if (skyscraper[4][k] == '2')
+			skyscraper[4][i] = '3';
+	}
+	if (skyscraper[5][i] == '1' && skyscraper[0][i] == '2')
+	{
+		if (skyscraper[1][k] == '2')
+			skyscraper[1][i] = '3';
+	}
+	if (skyscraper[i][0] == '1' && skyscraper[i][5] == '2')
+	{
+		if (skyscraper[k][4] == '2')
+			skyscraper[i][4] = '3';
+	}
+	if (skyscraper[i][5] == '1' && skyscraper[i][0] == '2')
+	{
+		if (skyscraper[k][1] == '2')
+			skyscraper[i][1] = '3';
+	}
 }

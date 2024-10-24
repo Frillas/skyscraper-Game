@@ -8,14 +8,15 @@ void    last_number_verti(char skyscraper[6][6])
         int     count;
 
         j = 1;
-        while (j < 5)
+	while (j < 5)
         {
                 i = find_zero_verti(skyscraper, j);
                 if (i)
                 {
                         count = numbers_count_verti(skyscraper,j);
                         result = (10 - count) + 48;
-                        skyscraper[i][j] = result;
+                        if (result == '1' || result == '2')
+				skyscraper[i][j] = result;
                 }
                 j++;
         }
@@ -57,4 +58,60 @@ int     numbers_count_verti(char skyscraper[6][6], int j)
                 i++;
         }
         return (count);
+}
+/*-----------------------------------------------------------------------*/
+int	cross_zero(char skyscraper[6][6])
+{
+	int	i;
+	int	j;
+	int	find;
+	
+	i = 1;
+	j = 1;
+	find = 1;
+	while(i < 5 && find)
+	{
+		if (skyscraper[i][j] != '0')
+			find = 0;
+		i++;
+		j++;
+	}
+	i = 4;
+	j = 1;
+	while(i > 0 && find)
+	{
+		if (skyscraper[i][j] != '0')
+			find = 0;
+		i--;
+		j++;
+	}
+	return (find);
+}
+/*-----------------------------------------------------------------------*/
+void	cross_include(char skyscraper[6][6])
+{
+	int	find;
+	int	i;
+	int	j;
+	
+	find = cross_zero(skyscraper);
+	if (find)
+	{
+		i = 1;
+		j = 1;
+		while (i < 5)
+		{
+			skyscraper[i][j] = '2';
+			i++;
+			j++;
+		}
+		i = 4;
+		j = 1;
+		while (i > 0)
+		{
+			skyscraper[i][j] = '1';
+			i--;
+			j++;
+		}
+	}
 }

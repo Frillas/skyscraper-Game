@@ -15,7 +15,8 @@ void	last_number_hori(char skyscraper[6][6])
 		{
 			count = numbers_count_hori(skyscraper,i);
 			result = (10 - count) + 48;
-			skyscraper[i][j] = result;	
+			if (result == '1' || result == '2')
+				skyscraper[i][j] = result;
 		}
 		i++;
 	}
